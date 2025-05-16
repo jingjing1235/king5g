@@ -29,11 +29,11 @@
       border: none;
     }
 
-    /* Khi thiết bị đang ở portrait (dọc) */
+    /* Chế độ dọc */
     @media screen and (orientation: portrait) {
       .video-wrapper {
-        width: 100vh; /* dùng chiều cao làm chiều ngang */
-        height: 56.25vh; /* 16:9 tỉ lệ = 9/16 = 0.5625 */
+        width: 95vh; /* giảm 5% để tránh bị che */
+        height: calc(95vh * 0.5625); /* tỉ lệ 16:9 */
         transform: translate(-50%, -50%) rotate(90deg);
         transform-origin: center center;
       }
@@ -44,11 +44,11 @@
       }
     }
 
-    /* Khi thiết bị đang ở landscape (ngang) */
+    /* Chế độ ngang */
     @media screen and (orientation: landscape) {
       .video-wrapper {
         width: 100vw;
-        height: 56.25vw;
+        height: calc(100vw * 0.5625); /* tỉ lệ 16:9 */
       }
 
       .video-wrapper iframe {
