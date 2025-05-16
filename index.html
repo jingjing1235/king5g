@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Video Google Drive</title>
+  <title>Video Drive Fullscreen</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      background: black;
-      height: 100%;
-      width: 100%;
       overflow: hidden;
-    }
-
-    .container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       background: black;
       width: 100vw;
-      height: calc(100vw * 0.5625); /* 16:9 tỉ lệ */
-      max-height: 100vh;
+      height: 100vh;
+    }
+
+    .wrapper {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      transform-origin: center center;
+      width: 100vh;
+      height: calc(100vh * 9 / 16);
+      background: black;
     }
 
     iframe {
@@ -33,11 +33,11 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrapper">
     <iframe
       src="https://drive.google.com/file/d/1ZiV7h2TKaxNylaowEMe2VGvdmgHRLcrp/preview"
-      allowfullscreen
       allow="autoplay; encrypted-media"
+      allowfullscreen
     ></iframe>
   </div>
 </body>
